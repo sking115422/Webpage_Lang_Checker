@@ -25,7 +25,6 @@ def check4English(url, inc):
     except Exception as e:
         print("error")    
 
-
 with open("./wp_eng_mast_list.txt", "+a") as f:
     with parallel_backend('threading'):
         Parallel(n_jobs=-1)(delayed(check4English)(wp_list[i], i) for i in range(0, len(wp_list))) 
